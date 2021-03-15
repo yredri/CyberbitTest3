@@ -1,0 +1,15 @@
+<section class="add-todo-box">
+    <h3 fxLayout="column" fxLayoutAlign="center center">New Todo</h3>
+    <form fxLayoutAlign="center center" fxLayoutGap="10px" #f='ngForm' (ngSubmit)="onSubmit(f)">
+        <mat-form-field>
+            <input type="text" matInput placeholder="Task Name" ngModel name="name">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Due date</mat-label>
+            <input matInput [matDatepicker]="picker" ngModel name="dueDate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        <button type="submit" mat-button color="accent">Add</button>
+    </form>
+</section>
